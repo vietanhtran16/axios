@@ -119,6 +119,14 @@ const handleUserResponse = (response: AxiosResponse<User>) => {
 	console.log(response.config);
 };
 
+axios<User>(config)
+    .then(handleUserResponse)
+    .catch(handleError)
+
+axios<User>('/user', config)
+    .then(handleUserResponse)
+    .catch(handleError)
+
 axios.get<User>('/user?id=12345')
 	.then(handleUserResponse)
 	.catch(handleError);
@@ -130,7 +138,7 @@ axios.get<User>('/user', { params: { id: 12345 } })
 axios.head<User>('/user')
 	.then(handleUserResponse)
     .catch(handleError);
-    
+
 axios.options<User>('/user')
 	.then(handleUserResponse)
 	.catch(handleError);
