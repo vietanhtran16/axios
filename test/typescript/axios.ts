@@ -138,6 +138,7 @@ axios.get<User>('/user', { params: { id: 12345 } })
 axios.head<User>('/user')
 	.then(handleUserResponse)
     .catch(handleError);
+
 axios.options<User>('/user')
 	.then(handleUserResponse)
 	.catch(handleError);
